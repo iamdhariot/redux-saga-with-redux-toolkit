@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
  * it can be empty */
 const initialState = {
   loading: false,
-  message: "",
+  getAll: [],
   error: "",
 };
 //creating a slice for test
@@ -17,7 +17,7 @@ export const testSlice = createSlice({
     },
     testSuccess: (state, action) => {
       state.loading = false;
-      state.message = action.payload.message; // getting message from payload passed to testSuccess action
+      state.getAll = action.payload; // getting message from payload passed to testSuccess action
     },
     testFailure: (state, action) => {
       state.loading = false;

@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { testRequest } from "../store/slices/test.slice";
-function App() {
+function Test() {
   // to disptch actions
   const dispatch = useDispatch();
   //reducer state selector
   const test = useSelector((state) => state.test);
-  console.log(test);
 
   const handleSubmit = () => {
     // alert("button clicked");
@@ -26,19 +25,14 @@ function App() {
     padding: 0,
     minHeight: "2vh",
   };
+  const dataStyle = {
+    margin: 0,
+    padding: 0,
+    fontSize: 10,
+    width: "55vw",
+  };
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <h1>Redux-saga-with-redux-toolkit</h1>
+    <div>
       <button
         onClick={handleSubmit}
         style={{
@@ -53,18 +47,15 @@ function App() {
         DISPATCH
       </button>
       <div style={{ width: "20%", marginTop: 10 }}>
-        <p style={pStyle}>
-          loading:<h5 style={hStyle}>{test.loading.toString()}</h5>
-        </p>
-        <p style={pStyle}>
-          message:<h5 style={hStyle}>{test.message}</h5>
-        </p>
-        <p style={pStyle}>
-          error:<h5 style={hStyle}>{test.error}</h5>
-        </p>
+        <p style={pStyle}>loading:</p>
+        <h5 style={hStyle}>{test.loading.toString()}</h5>
+        <p style={pStyle}>message:</p>
+        <p style={dataStyle}>{JSON.stringify(test.getAll)}</p>
+        <p style={pStyle}>error:</p>
+        <h5 style={hStyle}>{test.error}</h5>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Test;

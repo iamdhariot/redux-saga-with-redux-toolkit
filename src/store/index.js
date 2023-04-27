@@ -6,6 +6,8 @@ import createSagaMiddleware from "@redux-saga/core";
 import logger from "redux-logger";
 //reducers as a rootReducer object
 import rootReducer from "./rootReducer";
+// rootsaga as saga watchers object
+import rootSaga from "./sagas";
 
 const saga = createSagaMiddleware(); // saga middleware instance
 //store configuration
@@ -20,5 +22,5 @@ const store = configureStore({
       .concat(logger), // for redux logger, debugging purposes
 });
 
-//saga.run(); // to observe saga
+saga.run(rootSaga); // to observe saga
 export default store;
