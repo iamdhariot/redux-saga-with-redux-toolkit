@@ -22,7 +22,7 @@ The project uses the following dependencies:
 
 To run this project on your local machine:
 
-1. Clone the repository using `git clone`.
+1. Clone the repository using `git clone https://github.com/iamdhariot/redux-saga-with-redux-toolkit.git`.
 2. Run `npm install` to install the dependencies.
 3. Run `npm start` to start the project.
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -32,6 +32,13 @@ To run this project on your local machine:
 For demonstration purposes, the project uses the following API: https://date.nager.at/api/v2/publicholidays/2020/US
 
 The API can be dispatched using `dispatch(testRequest(payload))` with the `payload` containing the parameters accepted by the API.
+
+## Social Links
+
+- Twitter: [iamdhariot](https://twitter.com/iamdhariot)
+- Instagram: [iamdhariot](https://www.instagram.com/iamdhariot)
+- GitHub: [iamdhariot](https://github.com/iamdhariot)
+- LinkedIn: [iamdhariot](https://www.linkedin.com/in/iamdhariot)
 
 ## Conclusion
 
