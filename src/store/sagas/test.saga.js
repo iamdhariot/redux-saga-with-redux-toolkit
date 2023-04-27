@@ -18,10 +18,13 @@ export function* watchTest() {
 /**getTest will be called on the dispatch of testRequest */
 function* getTest(action) {
   try {
+    const { loginId, password, isSuccess } = action.payload;
     yield delay(1000);
     const data = yield call(Api, {
       method: "GET",
-      endpoint: endpoint.publicholidays,
+      endpoint: isSuccess
+        ? endpoint.publicholidays
+        : endpoint.publicholidaysNotExist, // just for demo
       //token:action.payload.token
       // body:action.payload.request
     });

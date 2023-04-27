@@ -7,11 +7,21 @@ function Test() {
   //reducer state selector
   const test = useSelector((state) => state.test);
 
-  const handleSubmit = () => {
+  const handleForSuccessSubmit = () => {
     // alert("button clicked");
     const request = {
-      userId: "Dhariot",
+      loginId: "Dhariot",
       password: "232242",
+      isSuccess: true,
+    };
+    dispatch(testRequest(request));
+  };
+  const handleForFailureSubmit = () => {
+    // alert("button clicked");
+    const request = {
+      loginId: "Dhariot",
+      password: "232242",
+      isSuccess: false,
     };
     dispatch(testRequest(request));
   };
@@ -29,12 +39,12 @@ function Test() {
     margin: 0,
     padding: 0,
     fontSize: 10,
-    width: "55vw",
+    width: "40vw",
   };
   return (
     <div>
       <button
-        onClick={handleSubmit}
+        onClick={handleForSuccessSubmit}
         style={{
           background: "dodgerblue",
           padding: 8,
@@ -42,9 +52,23 @@ function Test() {
           border: "none",
           cursor: "pointer",
           boxShadow: 20,
+          marginRight: 10,
         }}
       >
-        DISPATCH
+        DISPATCH FOR SUCCESS
+      </button>
+      <button
+        onClick={handleForFailureSubmit}
+        style={{
+          background: "red",
+          padding: 8,
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+          boxShadow: 20,
+        }}
+      >
+        DISPATCH FOR ERROR
       </button>
       <div style={{ width: "20%", marginTop: 10 }}>
         <p style={pStyle}>loading:</p>

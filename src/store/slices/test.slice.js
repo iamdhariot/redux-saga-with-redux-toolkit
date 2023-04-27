@@ -17,10 +17,12 @@ export const testSlice = createSlice({
     },
     testSuccess: (state, action) => {
       state.loading = false;
+      state.error = "";
       state.getAll = action.payload; // getting message from payload passed to testSuccess action
     },
     testFailure: (state, action) => {
       state.loading = false;
+      state.getAll = [];
       state.error = action.payload.error; // getting error from payload passed to testFailure action
     },
   },
